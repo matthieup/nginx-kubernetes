@@ -15,8 +15,6 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  annotations:
-  generation: 2
   name: nginx-ingress-2
   namespace: test
 spec:
