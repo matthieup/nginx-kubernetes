@@ -11,3 +11,21 @@ spec:
     port: 80
     targetPort: 80
   type: ClusterIP
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+  generation: 2
+  name: nginx-ingress-2
+  namespace: test
+spec:
+  entryPoints:
+  - web
+  routes:
+  - kind: Rule
+    match: Host(`bof.kube.whereisthe.lol`)
+    priority: 10
+    services:
+    - name: nginx-service
+      port: 80
